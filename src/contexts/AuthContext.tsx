@@ -50,9 +50,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       
       const mockUser: User = {
         id: '1',
-        name: 'John Doe',
+        name: 'Arjun Sharma',
         email,
-        avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=' + email
+        avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=arjun'
       };
       
       setUser(mockUser);

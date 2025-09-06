@@ -21,36 +21,36 @@ interface ProjectCard {
 const mockProjects: ProjectCard[] = [
   {
     id: '1',
-    name: 'Website Redesign',
-    description: 'Complete overhaul of company website with modern design',
+    name: 'E-commerce Platform',
+    description: 'Complete e-commerce solution with payment gateway (₹45L budget)',
     members: [
-      { name: 'Alice Johnson', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=alice' },
-      { name: 'Bob Smith', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=bob' },
-      { name: 'Carol Davis' },
+      { name: 'Arjun Sharma', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=arjun' },
+      { name: 'Priya Patel', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=priya' },
+      { name: 'Rahul Gupta' },
     ],
     tasks: { todo: 8, inProgress: 3, done: 12 },
     dueDate: '2024-02-15'
   },
   {
     id: '2',
-    name: 'Marketing Campaign',
-    description: 'Q1 digital marketing campaign for product launch',
+    name: 'Digital Marketing Campaign',
+    description: 'Festival season campaign with ₹12L marketing budget',
     members: [
-      { name: 'David Wilson', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=david' },
-      { name: 'Eva Brown' },
+      { name: 'Kavya Reddy', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=kavya' },
+      { name: 'Aditya Singh' },
     ],
     tasks: { todo: 5, inProgress: 2, done: 8 },
     dueDate: '2024-01-30'
   },
   {
     id: '3',
-    name: 'Mobile App Development',
-    description: 'Cross-platform mobile application development',
+    name: 'Fintech Mobile App',
+    description: 'UPI-based payment app with ₹75L development cost',
     members: [
-      { name: 'Frank Miller', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=frank' },
-      { name: 'Grace Lee', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=grace' },
-      { name: 'Henry Clark' },
-      { name: 'Ivy Taylor' },
+      { name: 'Vikram Joshi', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=vikram' },
+      { name: 'Shreya Agarwal', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=shreya' },
+      { name: 'Ravi Kumar' },
+      { name: 'Ananya Mehta' },
     ],
     tasks: { todo: 15, inProgress: 7, done: 5 },
     dueDate: '2024-03-20'
