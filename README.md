@@ -1,16 +1,14 @@
-# Welcome to your Lovable project
+# Welcome to my project
+
+##I have created this prototype as a basic demonstartion of my idea in this domain.
 
 ## Project info
 
 **URL**: https://lovable.dev/projects/2dbbfbc5-1d22-40d4-b6a8-7ab81d000480
 
-## How can I edit this code?
-
-There are several ways of editing your application.
-
 **Use Lovable**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/2dbbfbc5-1d22-40d4-b6a8-7ab81d000480) and start prompting.
+Simply visit the (https://lovable.dev/projects/2dbbfbc5-1d22-40d4-b6a8-7ab81d000480) and start prompting.
 
 Changes made via Lovable will be committed automatically to this repo.
 
