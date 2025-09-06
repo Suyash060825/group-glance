@@ -1,49 +1,39 @@
-import Project from './models/Project.js';
-import Task from './models/Task.js';
-
-let tasks = [
-  { id: 1, projectId: 1, title: "Set up repo", assignee: "Alice", dueDate: "2025-09-10", status: "To-Do" },
-];
-import dotenv from 'dotenv';
-dotenv.config();
-
-const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => console.log(`Backend running on http://localhost:${PORT}`));
-import mongoose from 'mongoose';
-
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log("MongoDB connected"))
-  .catch(err => console.error(err));
-
-
+// backend/server.js
 import express from "express";
 import cors from "cors";
+import dotenv from "dotenv";
+import mongoose from "mongoose";
+import { body, validationResult } from "express-validator";
+
+// Models
+import Project from "./models/Project.js";
+import Task from "./models/Task.js";
+
+dotenv.config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-let projects = [
-  { id: 1, name: "Hackathon Project", status: "In Progress" },
-];
+// Connect to MongoDB
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB connected"))
+  .catch(err => console.error("MongoDB connection error:", err));
 
-app.get("/api/projects", async (req,res) => { ... });
+// ------------------ Project Routes ------------------
 
+// Get all projects
+app.get("/api/projects", async (req, res) => {
+  try {
+    const projects = await Project.find();
+    res.json(projects);
+  } catch (err) {
+    res.status(500).json({ error: "Server error" });
+  }
+});
 
-app.post("/api/projects", async (req,res) => { ... });
-
-
-app.get("/api/projects/:projectId/tasks", async (req,res) => { ... });
-
-
-app.post("/api/projects/:projectId/tasks", async (req,res) => { ... });
-
-
-app.put("/api/tasks/:taskId", async (req,res) => { ... });
-
-
-
-app.listen(4000, () => console.log("Backend running on http://localhost:4000"));
-
-
-
+// Create a project
+app.post(
+  "/api/projects",
+  body("name").notEmpty().withMessage("Project name is required"),
+  async (req, res) => {
