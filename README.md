@@ -1,77 +1,52 @@
-# Welcome to my project
+# 🚀 SynergySphere – Advanced Team Collaboration Platform
 
-##I have created this prototype as a basic demonstartion of my idea in this domain using lovable. In the future i will add various features aiding teams to collaborate their work.
+## 🌐 Live Demo
+🔗 [Visit Website]
+        (https://synergy-sphere-yash.lovable.app/)  
+🔗 [Flowchart]
+        (https://www.mermaidchart.com/app/projects/88efca01-c427-4798-9af8-         9865ff2aea79/diagrams/b673723f-1477-462c-be08-9841a37271b9/version/v0.1/edit).
 
-#Link to website
-https://synergy-sphere-yash.lovable.app/
+---
 
-#link to flow chart->
+## 📌 Overview
+SynergySphere is a prototype collaboration platform designed to help teams:
+- Stay organized
+- Communicate effectively
+- Track progress clearly
+- Avoid deadline surprises
 
+This is an early MVP built using **Lovable**, showcasing the core idea.  
+Future updates will include advanced features for smarter team collaboration.
 
-## Project info
+---
 
-**URL**: https://lovable.dev/projects/2dbbfbc5-1d22-40d4-b6a8-7ab81d000480
+## ✨ Features (MVP)
+- User login/signup
+- Create and manage projects
+- Add team members
+- Assign tasks with deadlines & statuses
+- Project-specific discussions
+- Task progress visualization (To-Do, In Progress, Done)
 
-**Use Lovable**
+---
 
-Simply visit the (https://lovable.dev/projects/2dbbfbc5-1d22-40d4-b6a8-7ab81d000480) and start prompting.
+## 🛠 Tech Stack
+- [Vite](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React](https://react.dev/)
+- [shadcn-ui](https://ui.shadcn.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
+## 🧑‍💻 Running Locally
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Clone the repository
 git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/2dbbfbc5-1d22-40d4-b6a8-7ab81d000480) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
