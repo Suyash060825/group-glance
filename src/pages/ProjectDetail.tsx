@@ -1,29 +1,49 @@
 import { useEffect, useState } from "react";
-import { getProjects, createProject } from "../services/projectService";
+import { useParams } from "react-router-dom";
+import { getTasks, createTask, updateTask } from "../services/taskService";
 
-export default function ProjectList() {
-  const [projects, setProjects] = useState([]);
-  const [newProjectName, setNewProjectName] = useState("");
+export default function ProjectDetail() {
+  const { id } = useParams(); // projectId
+  const projectId = id!;
+  const [tasks, setTasks] = useState([]);
+  const [newTaskTitle, setNewTaskTitle] = useState("");
 
   useEffect(() => {
-    getProjects().then(setProjects);
-  }, []);
+    getTasks(projectId).then(setTasks);
+  }, [projectId]);
 
-  const handleAddProject = () => {
-    if(!newProjectName) return;
-    createProject({ name: newProjectName })
-      .then(project => setProjects(prev => [...prev, project]));
-    setNewProjectName("");
+  const handleAddTask = () => {
+    if(!newTaskTitle) return;
+    createTask(projectId, { title: newTaskTitle, assignee: "Alice", dueDate: "2025-09-10", status: "To-Do" })
+      .then(task => setTasks(prev => [...prev, task]));
+    setNewTaskTitle("");
+  };
+
+  const handleStatusChange = (taskId: string, newStatus: string) => {
+    updateTask(taskId, { status: newStatus })
+      .then(updated => setTasks(prev => prev.map(t => t._id === updated._id ? updated : t)));
   };
 
   return (
     <div className="p-4">
-      <h1 className="text-xl font-bold">Projects</h1>
+      <h1 className="text-xl font-bold">Project {projectId} Tasks</h1>
       <ul className="my-4">
-        {projects.map(p => <li key={p._id}>{p.name}</li>)}
+        {tasks.map(task => (
+          <li key={task._id} className="border p-2 mb-2 flex justify-between items-center">
+            <div>
+              <strong>{task.title}</strong> - {task.assignee} - {task.dueDate}
+            </div>
+            <select value={task.status} onChange={e => handleStatusChange(task._id, e.target.value)} className="border p-1">
+              <option>To-Do</option>
+              <option>In Progress</option>
+              <option>Done</option>
+            </select>
+          </li>
+        ))}
       </ul>
-      <input value={newProjectName} onChange={e => setNewProjectName(e.target.value)} placeholder="New Project Name" className="border p-2 mr-2"/>
-      <button onClick={handleAddProject} className="bg-blue-500 text-white p-2 rounded">Add Project</button>
+
+      <input value={newTaskTitle} onChange={e => setNewTaskTitle(e.target.value)} placeholder="New Task Title" className="border p-2 mr-2"/>
+      <button onClick={handleAddTask} className="bg-blue-500 text-white p-2 rounded">Add Task</button>
     </div>
   );
 }
