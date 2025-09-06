@@ -23,5 +23,23 @@ app.post("/api/projects", (req, res) => {
   projects.push(newProject);
   res.status(201).json(newProject);
 });
+// Get tasks by project
+app.get("/api/projects/:projectId/tasks", (req, res) => {
+  const { projectId } = req.params;
+  const projectTasks = tasks.filter(task => task.projectId === parseInt(projectId));
+  res.json(projectTasks);
+});
+
+
+app.post("/api/projects/:projectId/tasks", (req, res) => {
+  const { projectId } = req.params;
+  const newTask = { id: Date.now(), projectId: parseInt(projectId), ...req.body };
+  tasks.push(newTask);
+  res.status(201).json(newTask);
+});
+
 
 app.listen(4000, () => console.log("Backend running on http://localhost:4000"));
+
+
+
