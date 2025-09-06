@@ -1,3 +1,25 @@
+import { useEffect, useState } from "react";
+import { getProjects } from "../services/projectService";
+
+export default function Dashboard() {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    getProjects().then(setProjects);
+  }, []);
+
+  return (
+    <div className="p-4">
+      <h1 className="text-xl font-bold">Projects</h1>
+      <ul>
+        {projects.map((proj) => (
+          <li key={proj.id} className="p-2 border mb-2">{proj.name} - {proj.status}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 import React from 'react';
 import { Plus, Calendar, Users, CheckSquare, MessageSquare, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
