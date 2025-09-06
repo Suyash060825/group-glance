@@ -1,6 +1,11 @@
 let tasks = [
   { id: 1, projectId: 1, title: "Set up repo", assignee: "Alice", dueDate: "2025-09-10", status: "To-Do" },
 ];
+import dotenv from 'dotenv';
+dotenv.config();
+
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => console.log(`Backend running on http://localhost:${PORT}`));
 
 
 import express from "express";
