@@ -1,4 +1,8 @@
-// backend/server.js
+let tasks = [
+  { id: 1, projectId: 1, title: "Set up repo", assignee: "Alice", dueDate: "2025-09-10", status: "To-Do" },
+];
+
+
 import express from "express";
 import cors from "cors";
 
@@ -6,7 +10,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Mock data for now
 let projects = [
   { id: 1, name: "Hackathon Project", status: "In Progress" },
 ];
