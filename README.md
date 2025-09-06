@@ -1,6 +1,10 @@
 # Welcome to my project
 
 ##I have created this prototype as a basic demonstartion of my idea in this domain using lovable. In the future i will add various features aiding teams to collaborate their work.
+
+#Link to website
+https://synergy-sphere-yash.lovable.app/
+
 ## Project info
 
 **URL**: https://lovable.dev/projects/2dbbfbc5-1d22-40d4-b6a8-7ab81d000480
