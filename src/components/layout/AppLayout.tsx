@@ -6,6 +6,8 @@ import { TopNav } from './TopNav';
 import { MobileNav } from './MobileNav';
 import { useIsMobile } from '@/hooks/use-mobile';
 
+
+
 export const AppLayout: React.FC = () => {
   const isMobile = useIsMobile();
 
@@ -27,3 +29,4 @@ export const AppLayout: React.FC = () => {
     </SidebarProvider>
   );
 };
+
