@@ -1,3 +1,6 @@
+import Project from './models/Project.js';
+import Task from './models/Task.js';
+
 let tasks = [
   { id: 1, projectId: 1, title: "Set up repo", assignee: "Alice", dueDate: "2025-09-10", status: "To-Do" },
 ];
@@ -24,29 +27,20 @@ let projects = [
   { id: 1, name: "Hackathon Project", status: "In Progress" },
 ];
 
-app.get("/api/projects", (req, res) => {
-  res.json(projects);
-});
-
-app.post("/api/projects", (req, res) => {
-  const newProject = { id: Date.now(), ...req.body };
-  projects.push(newProject);
-  res.status(201).json(newProject);
-});
-// Get tasks by project
-app.get("/api/projects/:projectId/tasks", (req, res) => {
-  const { projectId } = req.params;
-  const projectTasks = tasks.filter(task => task.projectId === parseInt(projectId));
-  res.json(projectTasks);
-});
+app.get("/api/projects", async (req,res) => { ... });
 
 
-app.post("/api/projects/:projectId/tasks", (req, res) => {
-  const { projectId } = req.params;
-  const newTask = { id: Date.now(), projectId: parseInt(projectId), ...req.body };
-  tasks.push(newTask);
-  res.status(201).json(newTask);
-});
+app.post("/api/projects", async (req,res) => { ... });
+
+
+app.get("/api/projects/:projectId/tasks", async (req,res) => { ... });
+
+
+app.post("/api/projects/:projectId/tasks", async (req,res) => { ... });
+
+
+app.put("/api/tasks/:taskId", async (req,res) => { ... });
+
 
 
 app.listen(4000, () => console.log("Backend running on http://localhost:4000"));
